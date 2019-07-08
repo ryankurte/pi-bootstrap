@@ -1,0 +1,11 @@
+[Unit]
+Description=Boot script executor
+ConditionPathExists=/boot/bootstrap.sh
+
+[Service]
+Environment=STARTUP_FILE=/boot/bootstrap.sh
+ExecStart=/bin/bash
+
+[Install]
+WantedBy=multi-user.target
+
