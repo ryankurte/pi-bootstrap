@@ -1,0 +1,19 @@
+language: minimal
+
+script:
+        dpkg -b ./package ./pi-bootstrap_${TRAVIS_TAG}.deb
+
+deploy:
+  provider: releases
+  api_key:
+    secure: BUmiO7GKjYhJp8xTXc/3/YCsbqlIkFJvdYOf63/SMWCTEdTYtvW8rQP0MOZ5AhVuhGyb6Nj8QyImDIRCrCPmZ8jK6cIRawMXhhJDCviz1Lua2iot5aIVOyZWNvMqeqa2WakeJE9CP7EFT70ihqZQV2IGhCkWjjdHAcgrduVIMeJMrcy2m4OFXcEo2HOW6wWeK65atjLzXsof0RZBEtw17xYaaF2MH4pzUEsqwnG1jTxmY7Cwte7QUH6LRvVuvT11fM3rrMZcDIJJ8AobJjjke9Z3ePCTHp/l892E6UJ4KVQlocI368sQeZtiSSS5Zu5K8kgg2ZG8CAr+PA1h57vqSYWzUihIY1V8nTtDBtz1OTDzwsxDQvTQC1LFWr3JiDm6yY91jyfsENvUQv4I/7BaL/yONPFRv+8aWNmK62ANqkvtAdk3hM2slyObBWccNBxi/hIOstildb2LXhTg55amkllVhhSHIV9TAqBXdyhr+jbzXR6tATlMSgEkCPmKl54/+3V//6W4j6xq7Ms/uq00VZTAhCfm+uVf56CPnhS+HP2O0aTprfr8PFL6pamlrNFvRicIJ1UmNsGkZ1zXbmIPVH6ZlyzDxEPFdSjlMWIerAbxa81wCqcafQlGXf+TNjGUN5aYIUvZFlwAZIthPryy9a0Hlh1SmEIVm65RxB6QUHI=
+  file: "*./pi-bootstrap_${TRAVIS_TAG}.deb"
+  skip_cleanup: true
+  on:
+    repo: ryankurte/pi-bootstrap
+    tags: true
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
