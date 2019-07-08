@@ -3,7 +3,9 @@ Version: 0.0.3
 Maintainer: Ryan Kurte <ryankurte@gmail.com>
 Homepage: https://github.com/ryankurte/pi-bootstrap
 Architecture: all
-Description: A simple bootstrapping service for RPi
-  Checks for and runs the script located in /boot/bootstrap.sh
-  on startup after networking is available.
+Section: admin
+Priority: optional
+Description: Simple bootstrapping service for RPi
+ This checks for and runs a script located in /boot/bootstrap.sh
+ on startup after networking is available.
 

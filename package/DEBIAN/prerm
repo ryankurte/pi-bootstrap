@@ -1,1 +1,6 @@
+#!/bin/bash
+
+set -e
+
 systemctl disable pi-bootstrap
+

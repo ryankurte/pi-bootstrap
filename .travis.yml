@@ -2,8 +2,6 @@ language: minimal
 
 script:
   - dpkg -b ./package ./pi-bootstrap_${TRAVIS_TAG}.deb
-
-after_script:
   - dpkg -I ./pi-bootstrap_${TRAVIS_TAG}.deb
   - dpkg -c ./pi-bootstrap_${TRAVIS_TAG}.deb
 
