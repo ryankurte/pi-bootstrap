@@ -4,7 +4,7 @@ ConditionPathExists=/boot/bootstrap.sh
 
 [Service]
 Environment=STARTUP_FILE=/boot/bootstrap.sh
-ExecStart=/bin/bash
+ExecStart=/bin/bash $STARTUP_FILE
 
 [Install]
 WantedBy=multi-user.target
